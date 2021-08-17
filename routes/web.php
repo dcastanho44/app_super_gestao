@@ -50,9 +50,7 @@ Route::prefix('/app')->group(function(){      //agrupando as rotas
         return 'Clientes';
     })->name('app.clientes');
 
-    Route::get('/fornecedores', function(){
-        return 'Fornecedores';
-    })->name('app.fornecedores');
+    Route::get('/fornecedores', 'FornecedorController@index')->name('app.fornecedores');
 
     Route::get('/produtos', function(){
         return 'Produtos';
@@ -60,17 +58,8 @@ Route::prefix('/app')->group(function(){      //agrupando as rotas
 
 });
 
-Route::get('/rota1', function(){
-    echo 'Rota 1';
-})->name('site.rota1');
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
 
-
-Route::get('/rota2', function(){
-    return redirect()->route('site.rota1'); //redirecionando da rota 2 para a rota 1
-})->name('site.rota2');
-
-
-//Route::redirect('/rota2', 'rota1'); //redirecionando da rota2 para a rota1
 
 Route::fallback(function (){    //quando não houver uma rota válida
     echo 'A rota acessada não existe. <a href="'.route('site.index').'">Clique aqui para ir para a página inicial</a>';
