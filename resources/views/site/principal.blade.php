@@ -26,7 +26,7 @@
             <div class="contato">
                 <h1>Contato</h1>
                 <p>Caso tenha qualquer dúvida por favor entre em contato com nossa equipe pelo formulário abaixo.<p>
-                    @component('site.layouts._components.form_contato', ['corBorda' => 'borda-branca']) <!-- component parece com include mas envia parametros -->
+                    @component('site.layouts._components.form_contato', ['corBorda' => 'borda-branca', 'motivo_contatos' => $motivo_contatos]) <!-- component parece com include mas envia parametros -->
                     @endcomponent
             </div>
         </div>
