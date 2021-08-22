@@ -15,11 +15,12 @@ class AutenticacaoMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //verifica se o usuário possui acesso à rota
-       if(true){
-           return $next($request);
-       } else {
-       return Response ('Acesso Negado! Rota exige autenticação!');
-       }
+        session_start();
+
+        if(isset($_SESSION['email']) && $_SESSION['email'] != '') {
+            return $next($request); //o middleware deixa passar caso haja uma sessão válida
+        } else {
+            return redirect()->route('site.login', ['erro' => 2]); //retorna para o get do login o erro 2
+        }
     }
 }

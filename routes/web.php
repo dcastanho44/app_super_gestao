@@ -42,21 +42,22 @@ Route::get(
     echo "Estamos aqui: $nome, $categoria_id";
 })->where('nome', '[A-Za-z]+')->where('categoria_id','[0-9]+'); //impede que a categoria não seja um numero e o nome seja caracteres não numéricos
 
-Route::get('/login', function(){ return 'Login'; })->name('site.login');
+Route::get('/login/{erro?}', 'LoginController@index')->name('site.login');
+Route::post('/login', 'LoginController@autenticar')->name('site.login');
 
 Route::prefix('/app')->
        middleware('log.acesso', 'autenticacao') //colocando o middleware em todas as rotas do grupo
        ->group(function(){      //agrupando as rotas
 
-    Route::get('/clientes', function(){
-        return 'Clientes';
-    })->name('app.clientes'); //passando dois middlewares encadeados
+    Route::get('/home', 'HomeController@index')->name('app.home');
 
-    Route::get('/fornecedores', 'FornecedorController@index')->name('app.fornecedores');
+    Route::get('/sair', 'LoginController@sair')->name('app.sair');
 
-    Route::get('/produtos', function(){
-        return 'Produtos';
-    })->name('app.produtos');
+    Route::get('/cliente', 'ClienteController@index')->name('app.cliente'); 
+
+    Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
+
+    Route::get('/produto', 'ProdutoController@index')->name('app.produto');
 
 });
 
