@@ -66,6 +66,9 @@ Route::prefix('/app')->
     //produtos
     Route::resource('produto', "ProdutoController");                       //o framework vai automaticamente criar rotas com os métodos corretos associados a cada um dos métodos do controlador criado com resource
 
+    //produto detalhes
+    Route::resource('produto-detalhe', "ProdutoDetalheController");
+
 });
 
 Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
