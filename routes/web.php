@@ -63,7 +63,8 @@ Route::prefix('/app')->
     Route::get('/fornecedor/editar/{id}/{msg?}', 'FornecedorController@editar')->name('app.fornecedor.editar');
     Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name('app.fornecedor.excluir');
 
-    Route::get('/produto', 'ProdutoController@index')->name('app.produto');
+    //produtos
+    Route::resource('produto', "ProdutoController");                       //o framework vai automaticamente criar rotas com os métodos corretos associados a cada um dos métodos do controlador criado com resource
 
 });
 
