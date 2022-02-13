@@ -44,6 +44,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $fornecedores->appends($request)->links() }} <!-- botão de paginação, salvando as consultas do request em todas as páginas -->
             </div>
         </div>
     </div>
