@@ -18,6 +18,7 @@ class ProdutoController extends Controller
     {
         $produtos = Produto::paginate(10);
 
+        /* sem eloquent orm
         foreach($produtos as $key => $produto){
             print_r($produto->getAttributes());
             echo '<br><br>';
@@ -33,6 +34,7 @@ class ProdutoController extends Controller
             }
             echo '<hr>';
         }
+        */
         
         return view('app.produto.index', ['produtos' => $produtos, 'request' => $request->all() ]);
     }
