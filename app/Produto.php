@@ -14,4 +14,8 @@ class Produto extends Model
         //Produto TEM UM produtoDetalhe
         //1 registro relacionado em produto_detalhes com base na foreign key (produto_id)
     }
+
+    public function fornecedor(){
+        return $this->belongsTo('App\Fornecedor');
+    }
 }
