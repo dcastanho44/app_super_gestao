@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produto;
 use App\ProdutoDetalhe;
+use App\Item;
 use App\Unidade;
 use Illuminate\Http\Request;
 
