@@ -53,8 +53,6 @@ Route::prefix('/app')->
 
     Route::get('/sair', 'LoginController@sair')->name('app.sair');
 
-    Route::get('/cliente', 'ClienteController@index')->name('app.cliente'); 
-
     Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
     Route::post('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
     Route::get('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
@@ -68,6 +66,10 @@ Route::prefix('/app')->
 
     //produto detalhes
     Route::resource('produto-detalhe', "ProdutoDetalheController");
+
+    Route::resource('cliente', 'ClienteController');
+    Route::resource('pedido', 'PedidoController');
+    Route::resource('pedido-produto', 'PedidoProdutoController');
 
 });
 
