@@ -18,7 +18,7 @@
         </div>
 
         <div class="informacao-pagina">
-            <h4>Detalhes do pedido</h4>
+            <h4>Detalhes do Pedido</h4>
             <p>ID do Pedido: {{ $pedido->id }}</p>
             <p>Cliente: {{ $pedido->cliente_id }}</p>
             
@@ -28,6 +28,7 @@
                     <thead>
                         <th>ID</th>
                         <th>Nome do Produto</th>
+                        <th>Quantidade</th>
                         <th>Data de Inclusão do Item no Pedido</th>
                     </thead>
                     <tbody>
@@ -35,6 +36,7 @@
                             <tr>
                                 <td>{{ $produto->id }}</td>
                                 <td>{{ $produto->nome }}</td>
+                                <td>{{ $produto->pivot->quantidade }}</td>
                                 <td>{{ $produto->pivot->created_at->format('d/m/Y') }}</td>
                             </tr>
                         @endforeach
