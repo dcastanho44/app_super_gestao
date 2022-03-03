@@ -1,6 +1,6 @@
 @extends('site.layouts.basico') <!-- o extends do blade vai para o diretório views -->
 
-@section ('titulo', 'Sobre Nós');
+@section ('titulo', 'Sobre Nós')
 @section ('conteudo')
     
     @include('site.layouts._partials.topo')

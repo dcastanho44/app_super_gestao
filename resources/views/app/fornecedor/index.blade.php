@@ -7,7 +7,7 @@
     <div class="conteudo-pagina">
 
         <div class="titulo-pagina-2">
-            <p>Fornecedor</p>
+            <p>Consultar Fornecedores</p>
         </div>
 
         <div class="menu">
@@ -24,7 +24,7 @@
                     <input type="text" name="nome" placeholder="Nome" class="borda-preta">
                     <input type="text" name="site" placeholder="Site" class="borda-preta">
                     <input type="text" name="uf" placeholder="UF"class="borda-preta">
-                    <input type="text" name="email" placeholder="E-mail" class="borda-preta">
+                    <input type="text" name="email" placeholder="E-Mail" class="borda-preta">
                     <button type="submit" class="borda-preta">Pesquisar</button>
                 </form>
             </div>

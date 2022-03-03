@@ -32,7 +32,7 @@
                     <input type="text" name="uf" value="{{ $fornecedor->uf ?? old('uf') }}" placeholder="UF" class="borda-preta">
                     {{ $errors->has('uf') ? $errors->first('uf') : ''}}
 
-                    <input type="text" name="email" value="{{ $fornecedor->email ?? old('email') }}" placeholder="E-mail" class="borda-preta">
+                    <input type="text" name="email" value="{{ $fornecedor->email ?? old('email') }}" placeholder="E-Mail" class="borda-preta">
                     {{ $errors->has('email') ? $errors->first('email') : ''}}
 
                     <button type="submit" class="borda-preta">Cadastrar</button>
