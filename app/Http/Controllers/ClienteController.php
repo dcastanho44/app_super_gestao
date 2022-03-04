@@ -14,7 +14,7 @@ class ClienteController extends Controller
      */
     public function index(Request $request)
     {
-        $clientes = Cliente::paginate(10);
+        $clientes = Cliente::paginate(10); /**/
         return view('app.cliente.index', ['clientes' => $clientes, 'request' => $request->all()]);
     }
 
